@@ -31,7 +31,7 @@ func TestNewShortestPath(t *testing.T) {
 	d := Location{1, 1}
 	cases := []struct{
 		name string
-		strategy TravelStatregy
+		strategy TravelStrategy
 	}{
 		{"car", Car{}},
 		{"walking", Walking{}},
