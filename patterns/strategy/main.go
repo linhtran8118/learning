@@ -49,28 +49,14 @@ func findShortestPathByCycling(source, dest Location) []Location{
 	return []Location{}
 }
 
-func (m * Map) setTravelStrategy(travel TravelStrategy) {
-	m.TravelStrategy = travel
-}
-
 type Map struct {
 	TravelStrategy
 }
 
+func (m * Map) setTravelStrategy(travel TravelStrategy) {
+	m.TravelStrategy = travel
+}
+
 type TravelStrategy interface {
 	findShortestPath(source, dest Location) []Location
-}
-
-type Car struct {}
-
-func (c Car) findShortestPath(source, dest Location) []Location {
-	fmt.Println("Car!!!!")
-	return []Location{}
-}
-
-type Walking struct {}
-
-func (c Walking) findShortestPath(source, dest Location) []Location {
-	fmt.Println("Walking!!!!")
-	return []Location{}
 }
