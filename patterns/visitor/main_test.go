@@ -7,12 +7,11 @@ import (
 
 func TestNormal(t *testing.T) {
 	documents := []Document{
-		Payslip{PayslipExporter{}},
-		Timesheet{TimeSheetExporter{}},
-		Payslip{PayslipExporter{}},
-		Timesheet{TimeSheetExporter{}},
+		Payslip{},
+		Timesheet{},
 	}
+	vistor := XMLVisitor{}
 	for _, doc := range documents {
-		doc.ToXML()
+		doc.export(vistor)
 	}
 }
